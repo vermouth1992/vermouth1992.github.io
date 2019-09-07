@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>multi-agent | Chi Zhang</title>
+    <link>https://vermouth1992.github.io/tags/multi-agent/</link>
+      <atom:link href="https://vermouth1992.github.io/tags/multi-agent/index.xml" rel="self" type="application/rss+xml" />
+    <description>multi-agent</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © 2019 Chi Zhang. All rights reserved.</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://vermouth1992.github.io/img/icon-192.png</url>
+      <title>multi-agent</title>
+      <link>https://vermouth1992.github.io/tags/multi-agent/</link>
+    </image>
+    
+    <item>
+      <title>A Cooperative Multi-agent Deep Reinforcement Learning Framework for Real-time Residential Load Scheduling</title>
+      <link>https://vermouth1992.github.io/publication/iotdi-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://vermouth1992.github.io/publication/iotdi-2019/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
