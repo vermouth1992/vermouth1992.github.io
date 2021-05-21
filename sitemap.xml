@@ -1,237 +1,102 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://vermouth1992.github.io/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/talk/example-talk.html</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/event.html</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html</loc>
     <lastmod>2019-09-07T15:05:32-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/post.html</loc>
     <lastmod>2019-09-07T15:05:32-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/post/</loc>
-    <lastmod>2019-09-07T15:05:32-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/publication_types/1/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/slides.html</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/slides/example.html</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/publication-type/1.html</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/publication/iotdi-2019/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/publication/iotdi-2019.html</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/deep-reinforcement-learning.html</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/internet-of-things.html</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/multi-agent.html</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/publication_types.html</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/publication.html</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/real-time-load-scheduling.html</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/smart-home.html</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tags.html</loc>
     <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/chi-zhang/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/convolutional-neural-networks.html</loc>
     <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/chuanxiu-xiong/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/deep-reinforcement-learning/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/internet-of-things/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/multi-agent/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/publication_types/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/publication/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/rajgopal-kannan/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/real-time-load-scheduling/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/sanmukh-r.-kuppannagari/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/smart-home/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/deep-learning.html</loc>
     <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/viktor-k.-prasanna/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/publication/fpga-2018/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/algorithmic-optimization/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/convolutional-neural-networks/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/post/cs599.html</loc>
     <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/fast-fourier-trans-form/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/field-programmable-gate-array/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/hanqing-zeng/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/hardware-mapping/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/ren-chen/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/software-hardware-co-design/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/viktor-prasanna/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/corey-chen/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/long-short-term-memory.html</loc>
     <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/deep-learning/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/portfolio-management.html</loc>
     <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/post/cs599/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/reinforcement-learning.html</loc>
     <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/limian-zhang/</loc>
-    <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/long-short-term-memory/</loc>
-    <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/portfolio-management/</loc>
-    <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/reinforcement-learning/</loc>
-    <lastmod>2019-09-07T13:02:04-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/concurrent-processing/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/concurrent-processing.html</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/cpu/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/cpu.html</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/discrete-fourier-transform/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/discrete-fourier-transform.html</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/double-buffering/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/double-buffering.html</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/fpga/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/fpga.html</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/publication/fpga-2017/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/publication/fpga-2017.html</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/overlap-and-add/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/overlap-and-add.html</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/tags/shared-memory/</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/tag/shared-memory.html</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vermouth1992.github.io/admin.html</loc>
+  </url><url>
+    <loc>https://vermouth1992.github.io/categories.html</loc>
   </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/authors/admin/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://vermouth1992.github.io/talk/</loc>
-  </url>
-  
 </urlset>

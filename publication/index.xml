@@ -2,37 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications | Chi Zhang</title>
-    <link>https://vermouth1992.github.io/publication/</link>
+    <link>https://vermouth1992.github.io/publication.html</link>
       <atom:link href="https://vermouth1992.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © 2019 Chi Zhang. All rights reserved.</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Chi Zhang</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://vermouth1992.github.io/img/icon-192.png</url>
+      <url>https://vermouth1992.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Publications</title>
-      <link>https://vermouth1992.github.io/publication/</link>
+      <link>https://vermouth1992.github.io/publication.html</link>
     </image>
     
     <item>
       <title>A Cooperative Multi-agent Deep Reinforcement Learning Framework for Real-time Residential Load Scheduling</title>
-      <link>https://vermouth1992.github.io/publication/iotdi-2019/</link>
+      <link>https://vermouth1992.github.io/publication/iotdi-2019.html</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://vermouth1992.github.io/publication/iotdi-2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A Framework for Generating High Throughput CNN Implementations on FPGAs</title>
-      <link>https://vermouth1992.github.io/publication/fpga-2018/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://vermouth1992.github.io/publication/fpga-2018/</guid>
+      <guid>https://vermouth1992.github.io/publication/iotdi-2019.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Frequency Domain Acceleration of Convolutional Neural Networks on CPU-FPGA Shared Memory System</title>
-      <link>https://vermouth1992.github.io/publication/fpga-2017/</link>
+      <link>https://vermouth1992.github.io/publication/fpga-2017.html</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://vermouth1992.github.io/publication/fpga-2017/</guid>
+      <guid>https://vermouth1992.github.io/publication/fpga-2017.html</guid>
       <description></description>
     </item>
     

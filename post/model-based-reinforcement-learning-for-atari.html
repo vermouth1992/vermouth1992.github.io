@@ -1,0 +1,1273 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Chi Zhang" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Model-free reinforcement learning requires extensive interaction with the environment in order to achieve very good performance in Atari games. This will cause problems in situations where large amount of trial-and-errors are impossible or time-consuming. In this paper, the author presents Simulated Policy Learning (SimPLe), a complete model-based deep RL algorithm based on video prediction models and achieve comparable performance with model-free RL approach on various of games in only 100K interactions between the agent and the environments." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.ddb2a9c79d7760a321f1b5392a04566a.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Chi Zhang" />
+  <meta property="og:url" content="https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html" />
+  <meta property="og:title" content="Model Based Reinforcement Learning for Atari (Paper Summary) | Chi Zhang" />
+  <meta property="og:description" content="Model-free reinforcement learning requires extensive interaction with the environment in order to achieve very good performance in Atari games. This will cause problems in situations where large amount of trial-and-errors are impossible or time-consuming. In this paper, the author presents Simulated Policy Learning (SimPLe), a complete model-based deep RL algorithm based on video prediction models and achieve comparable performance with model-free RL approach on various of games in only 100K interactions between the agent and the environments." /><meta property="og:image" content="https://vermouth1992.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://vermouth1992.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-07-05T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-09-07T15:05:32-07:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html"
+  },
+  "headline": "Model Based Reinforcement Learning for Atari (Paper Summary)",
+  
+  "datePublished": "2019-07-05T00:00:00Z",
+  "dateModified": "2019-09-07T15:05:32-07:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Chi Zhang"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chi Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vermouth1992.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Model-free reinforcement learning requires extensive interaction with the environment in order to achieve very good performance in Atari games. This will cause problems in situations where large amount of trial-and-errors are impossible or time-consuming. In this paper, the author presents Simulated Policy Learning (SimPLe), a complete model-based deep RL algorithm based on video prediction models and achieve comparable performance with model-free RL approach on various of games in only 100K interactions between the agent and the environments."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Model Based Reinforcement Learning for Atari (Paper Summary) | Chi Zhang</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="47292a1e3d8c106d82d88dbeee81eee2" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.f16be01fc8fb2b5885dd67ce942d1185.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Chi Zhang</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Chi Zhang</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>Experience</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Post</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Model Based Reinforcement Learning for Atari (Paper Summary)</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Sep 7, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="overview">Overview</h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-overview-algorithm">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" >
+        <img alt="Overview Algorithm" srcset="
+               /post/model-based-reinforcement-learning-for-atari/main_loop_hu4b998423f5b7851dfc75d4bd4420cf2d_91726_f961b7617b44b364f8a3925d0cef32fd.png 400w,
+               /post/model-based-reinforcement-learning-for-atari/main_loop_hu4b998423f5b7851dfc75d4bd4420cf2d_91726_cac018c17960cd1675eb46c6ef41225e.png 760w,
+               /post/model-based-reinforcement-learning-for-atari/main_loop_hu4b998423f5b7851dfc75d4bd4420cf2d_91726_1200x1200_fit_lanczos_2.png 1200w"
+               src="/post/model-based-reinforcement-learning-for-atari/main_loop_hu4b998423f5b7851dfc75d4bd4420cf2d_91726_f961b7617b44b364f8a3925d0cef32fd.png"
+               width="724"
+               height="456"
+               loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Overview Algorithm
+    </figcaption></figure>
+The main loop of model-based reinforcement learning is shown above. It consists:</p>
+<ol>
+<li>Collecting data using current policy and add it to the dataset.</li>
+<li>Train a world model using the current dataset.</li>
+<li>Train policy using world model.</li>
+</ol>
+<p>The main challenge of the model-based RL is:</p>
+<ul>
+<li>The imperfections of the trained world model is unavoidable. Thus, compounding errors when training policy using world models need to be addressed.</li>
+<li>The design of the world model is challenging and the <code>stochasticity</code> is crucial for a good world model.</li>
+</ul>
+<h2 id="world-models">World Models</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-architecture-of-the-the-stochastic-model-with-discrete-latent">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" >
+        <img alt="Architecture of the the stochastic model with discrete latent." srcset="
+               /post/model-based-reinforcement-learning-for-atari/model_architecture_huc355c29960a8b4fc39762edcf01707f3_237560_7ba247a5e3a5c104ff2007b682f0c168.png 400w,
+               /post/model-based-reinforcement-learning-for-atari/model_architecture_huc355c29960a8b4fc39762edcf01707f3_237560_c2b3a7a5fb526e5bb8850af21916944a.png 760w,
+               /post/model-based-reinforcement-learning-for-atari/model_architecture_huc355c29960a8b4fc39762edcf01707f3_237560_1200x1200_fit_lanczos_2.png 1200w"
+               src="/post/model-based-reinforcement-learning-for-atari/model_architecture_huc355c29960a8b4fc39762edcf01707f3_237560_7ba247a5e3a5c104ff2007b682f0c168.png"
+               width="760"
+               height="329"
+               loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Architecture of the the stochastic model with discrete latent.
+    </figcaption></figure>
+<h3 id="stochasticity">Stochasticity</h3>
+<p>Fitting a density model is impractical for large observation space. Thus, the author considers STOCHASTIC VARIATIONAL VIDEO PREDICTION (SV2P) proposed in <a href="https://arxiv.org/abs/1710.11252" target="_blank" rel="noopener">Babaeizadeh et al</a>. Given $N$ transitions, our goal is to maximize the $\prod_{t=1}^{N} p_{\theta}(x_{t+1}|x_t, a_t)$. We apply variational inference by adding time-variant latent variable $z_t$. We use an inference network $q_{\phi}(z_t|x_{t+1},x_{t},a_{t})$ to approximate the true posterior $p(z_t|x_{t+1},x_{t},a_{t})$ and outputs $\mathcal{N}(\mu_{\phi}, \sigma_{\phi})$. This network is trained using reparameterization trick as:
+$$
+z_t=\mu_{\phi}+\sigma_{\phi}\times \epsilon_t,\quad \epsilon_t\sim \mathcal{N}(0, I)
+$$
+Here, $\theta$ and $\phi$ are the parameters of the generative model and inference network, respectively. To learn these parameters, we optimize the variational lower bound as:
+$$
+\begin{equation}
+\mathcal{L}(x)=-\mathbb{E}_{q_{\phi}}[\log p_{\theta}(x_{t+1}|x_t, a_t, z_t)] + D_{KL}(q_{\phi}, p(z_t))
+\end{equation}
+$$
+where $D_{KL}$ is the Kullback-Leibler divergence between the approximated posterior and assumed
+prior $p(z)$ which in our case is the standard Gaussian $\mathcal{N}(0, I)$.</p>
+<p>The training of the model is divided into three phases:</p>
+<ol>
+<li>The inference network is turned off and only the generative model is trained.</li>
+<li>The inference network is used without KL divergence loss.</li>
+<li>The KL divergence loss is added.</li>
+</ol>
+<p>The author argues that the weights of KL divergence are game-dependent and that&rsquo;s unacceptable if we want to apply to a broad portfolio of Atari games without hyperparameter tuning. Second, the weight is usually a small number within $[e^{-5}, e^{-3}]$ which means that the approximated posterior can diverge significantly from the assumed prior. The author addresses these problems by using discrete latent variable into bits (zeros and ones) similar to <a href="https://arxiv.org/abs/1801.09797" target="_blank" rel="noopener">Kaiser &amp; Bengio (2018)</a>. The authors also train an auxilliary LSTM-based recurrent network to predict these bits autoregressively. At inference time, the latent bits will be generated by this auxiliary network in contrast to sampling from a prior. To make the predictive model more robust to unseen latent bits, we add uniform noise to approximated latent values before discretization and apply dropout <a href="https://dl.acm.org/citation.cfm?id=2670313" target="_blank" rel="noopener">Srivastava et al., 2014</a> on bits after discretization.</p>
+<h3 id="loss-function">Loss function</h3>
+<p>They tried both categorical softmax and $L_2$ loss and apply <code>clipped loss</code> as $\max(Loss, C)$ for constant $C$. In categorical loss, $C$ is 10. In $L_2$ loss, $C$ is 0.03. That means, if the level of confidence about the correct pixel value exceeds 97% (as $-\ln(0.97) \approx 0.03$) we get no gradients from that pixel any longer.</p>
+<h3 id="scheduled-sampling">Scheduled sampling</h3>
+<p>They mitigate the problem of compounding errors in simulated environment by randomly replacing in training some frames of input $X$ by the prediction from the previous steps. Typically, we linearly increase the mixing probability during training arriving at 100% around the middle of the first iteration of the training loop.</p>
+<h2 id="policy-training">Policy Training</h2>
+<p>When training policy in simulated environment, the problem is still the compounding errors with long trajectories. To mitigate the problem, they choose short rollouts and uniformly sample the starting state from the ground-truth buffer. However, short rollouts may have a degrading effect as the PPO algorithm does not have a way to infer effects longer than the rollout length. To ease this problem, in the last step of a rollout we add to the reward the evaluation of the value function that is learned along the policy as baselines to compute the advantages.</p>
+<h2 id="results">Results</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-sample-efficiency-compared-to-rainbow">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" >
+        <img alt="Sample efficiency compared to Rainbow." srcset="
+               /post/model-based-reinforcement-learning-for-atari/result_rainbow_hub5ca05261be413946980b4f0b0eb66f3_128690_eb0921b946141f22737508ba120263e3.png 400w,
+               /post/model-based-reinforcement-learning-for-atari/result_rainbow_hub5ca05261be413946980b4f0b0eb66f3_128690_f3cfa2206e85ae35fd62b76dbf97356f.png 760w,
+               /post/model-based-reinforcement-learning-for-atari/result_rainbow_hub5ca05261be413946980b4f0b0eb66f3_128690_1200x1200_fit_lanczos_2.png 1200w"
+               src="/post/model-based-reinforcement-learning-for-atari/result_rainbow_hub5ca05261be413946980b4f0b0eb66f3_128690_eb0921b946141f22737508ba120263e3.png"
+               width="625"
+               height="760"
+               loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Sample efficiency compared to Rainbow.
+    </figcaption></figure>
+<p>Each bar illustrates the number of interactions with environment required by Rainbow to achieve the same score as our method (SimPLe). The red line indicates the 100K interactions threshold used by our method.
+Please refer to the paper for more results.</p>
+<h2 id="reference">Reference</h2>
+<p><a href="https://arxiv.org/abs/1903.00374" target="_blank" rel="noopener">Model Based Reinforcement Learning for Atari</a></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html&amp;text=Model%20Based%20Reinforcement%20Learning%20for%20Atari%20%28Paper%20Summary%29" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html&amp;t=Model%20Based%20Reinforcement%20Learning%20for%20Atari%20%28Paper%20Summary%29" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Model%20Based%20Reinforcement%20Learning%20for%20Atari%20%28Paper%20Summary%29&amp;body=https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html&amp;title=Model%20Based%20Reinforcement%20Learning%20for%20Atari%20%28Paper%20Summary%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Model%20Based%20Reinforcement%20Learning%20for%20Atari%20%28Paper%20Summary%29%20https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html&amp;title=Model%20Based%20Reinforcement%20Learning%20for%20Atari%20%28Paper%20Summary%29" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://vermouth1992.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huc58505316b018906e49d12f391640d0e_1881019_270x270_fill_q75_lanczos_center.jpg" alt="Chi Zhang"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://vermouth1992.github.io/">Chi Zhang</a></h5>
+      <h6 class="card-subtitle">PhD in Computer Science</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/chi-zhang-00979082/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=z83Itm8AAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/vermouth1992" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/ChiZhang_CV.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    © 2021 Chi Zhang
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.71e713848164e269bc250f377042949d.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

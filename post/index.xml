@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Chi Zhang</title>
-    <link>https://vermouth1992.github.io/post/</link>
+    <link>https://vermouth1992.github.io/post.html</link>
       <atom:link href="https://vermouth1992.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © 2019 Chi Zhang. All rights reserved.</copyright><lastBuildDate>Fri, 05 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Chi Zhang</copyright><lastBuildDate>Fri, 05 Jul 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://vermouth1992.github.io/img/icon-192.png</url>
+      <url>https://vermouth1992.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
-      <link>https://vermouth1992.github.io/post/</link>
+      <link>https://vermouth1992.github.io/post.html</link>
     </image>
     
     <item>
       <title>Model Based Reinforcement Learning for Atari (Paper Summary)</title>
-      <link>https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari/</link>
+      <link>https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html</link>
       <pubDate>Fri, 05 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari/</guid>
-      <description>
-
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-
+      <guid>https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari.html</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;
 
 
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;main_loop.png&#34; &gt;
-
-&lt;img src=&#34;main_loop.png&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Overview Algorithm&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
+
+
+
+
+&lt;figure  id=&#34;figure-overview-algorithm&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;Overview Algorithm&#34; srcset=&#34;
+               /post/model-based-reinforcement-learning-for-atari/main_loop_hu4b998423f5b7851dfc75d4bd4420cf2d_91726_f961b7617b44b364f8a3925d0cef32fd.png 400w,
+               /post/model-based-reinforcement-learning-for-atari/main_loop_hu4b998423f5b7851dfc75d4bd4420cf2d_91726_cac018c17960cd1675eb46c6ef41225e.png 760w,
+               /post/model-based-reinforcement-learning-for-atari/main_loop_hu4b998423f5b7851dfc75d4bd4420cf2d_91726_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari/main_loop_hu4b998423f5b7851dfc75d4bd4420cf2d_91726_f961b7617b44b364f8a3925d0cef32fd.png&#34;
+               width=&#34;724&#34;
+               height=&#34;456&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Overview Algorithm
+    &lt;/figcaption&gt;&lt;/figure&gt;
 The main loop of model-based reinforcement learning is shown above. It consists:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Collecting data using current policy and add it to the dataset.&lt;/li&gt;
 &lt;li&gt;Train a world model using the current dataset.&lt;/li&gt;
 &lt;li&gt;Train policy using world model.&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;The main challenge of the model-based RL is:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;The imperfections of the trained world model is unavoidable. Thus, compounding errors when training policy using world models need to be addressed.&lt;/li&gt;
 &lt;li&gt;The design of the world model is challenging and the &lt;code&gt;stochasticity&lt;/code&gt; is crucial for a good world model.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;world-models&#34;&gt;World Models&lt;/h2&gt;
 
 
@@ -65,25 +65,29 @@ The main loop of model-based reinforcement learning is shown above. It consists:
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;model_architecture.png&#34; &gt;
-
-&lt;img src=&#34;model_architecture.png&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Architecture of the the stochastic model with discrete latent.&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
 
 
+
+
+
+&lt;figure  id=&#34;figure-architecture-of-the-the-stochastic-model-with-discrete-latent&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;Architecture of the the stochastic model with discrete latent.&#34; srcset=&#34;
+               /post/model-based-reinforcement-learning-for-atari/model_architecture_huc355c29960a8b4fc39762edcf01707f3_237560_7ba247a5e3a5c104ff2007b682f0c168.png 400w,
+               /post/model-based-reinforcement-learning-for-atari/model_architecture_huc355c29960a8b4fc39762edcf01707f3_237560_c2b3a7a5fb526e5bb8850af21916944a.png 760w,
+               /post/model-based-reinforcement-learning-for-atari/model_architecture_huc355c29960a8b4fc39762edcf01707f3_237560_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari/model_architecture_huc355c29960a8b4fc39762edcf01707f3_237560_7ba247a5e3a5c104ff2007b682f0c168.png&#34;
+               width=&#34;760&#34;
+               height=&#34;329&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Architecture of the the stochastic model with discrete latent.
+    &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;h3 id=&#34;stochasticity&#34;&gt;Stochasticity&lt;/h3&gt;
-
-&lt;p&gt;Fitting a density model is impractical for large observation space. Thus, the author considers STOCHASTIC VARIATIONAL VIDEO PREDICTION (SV2P) proposed in &lt;a href=&#34;https://arxiv.org/abs/1710.11252&#34; target=&#34;_blank&#34;&gt;Babaeizadeh et al&lt;/a&gt;. Given $N$ transitions, our goal is to maximize the $\prod_{t=1}^{N} p_{\theta}(x_{t+1}|x_t, a_t)$. We apply variational inference by adding time-variant latent variable $z_t$. We use an inference network $q_{\phi}(z_t|x_{t+1},x_{t},a_{t})$ to approximate the true posterior $p(z_t|x_{t+1},x_{t},a_{t})$ and outputs $\mathcal{N}(\mu_{\phi}, \sigma_{\phi})$. This network is trained using reparameterization trick as:
+&lt;p&gt;Fitting a density model is impractical for large observation space. Thus, the author considers STOCHASTIC VARIATIONAL VIDEO PREDICTION (SV2P) proposed in &lt;a href=&#34;https://arxiv.org/abs/1710.11252&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Babaeizadeh et al&lt;/a&gt;. Given $N$ transitions, our goal is to maximize the $\prod_{t=1}^{N} p_{\theta}(x_{t+1}|x_t, a_t)$. We apply variational inference by adding time-variant latent variable $z_t$. We use an inference network $q_{\phi}(z_t|x_{t+1},x_{t},a_{t})$ to approximate the true posterior $p(z_t|x_{t+1},x_{t},a_{t})$ and outputs $\mathcal{N}(\mu_{\phi}, \sigma_{\phi})$. This network is trained using reparameterization trick as:
 $$
 z_t=\mu_{\phi}+\sigma_{\phi}\times \epsilon_t,\quad \epsilon_t\sim \mathcal{N}(0, I)
 $$
@@ -95,29 +99,19 @@ $$
 $$
 where $D_{KL}$ is the Kullback-Leibler divergence between the approximated posterior and assumed
 prior $p(z)$ which in our case is the standard Gaussian $\mathcal{N}(0, I)$.&lt;/p&gt;
-
 &lt;p&gt;The training of the model is divided into three phases:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;The inference network is turned off and only the generative model is trained.&lt;/li&gt;
 &lt;li&gt;The inference network is used without KL divergence loss.&lt;/li&gt;
 &lt;li&gt;The KL divergence loss is added.&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;The author argues that the weights of KL divergence are game-dependent and that&amp;rsquo;s unacceptable if we want to apply to a broad portfolio of Atari games without hyperparameter tuning. Second, the weight is usually a small number within $[e^{-5}, e^{-3}]$ which means that the approximated posterior can diverge significantly from the assumed prior. The author addresses these problems by using discrete latent variable into bits (zeros and ones) similar to &lt;a href=&#34;https://arxiv.org/abs/1801.09797&#34; target=&#34;_blank&#34;&gt;Kaiser &amp;amp; Bengio (2018)&lt;/a&gt;. The authors also train an auxilliary LSTM-based recurrent network to predict these bits autoregressively. At inference time, the latent bits will be generated by this auxiliary network in contrast to sampling from a prior. To make the predictive model more robust to unseen latent bits, we add uniform noise to approximated latent values before discretization and apply dropout &lt;a href=&#34;https://dl.acm.org/citation.cfm?id=2670313&#34; target=&#34;_blank&#34;&gt;Srivastava et al., 2014&lt;/a&gt; on bits after discretization.&lt;/p&gt;
-
+&lt;p&gt;The author argues that the weights of KL divergence are game-dependent and that&amp;rsquo;s unacceptable if we want to apply to a broad portfolio of Atari games without hyperparameter tuning. Second, the weight is usually a small number within $[e^{-5}, e^{-3}]$ which means that the approximated posterior can diverge significantly from the assumed prior. The author addresses these problems by using discrete latent variable into bits (zeros and ones) similar to &lt;a href=&#34;https://arxiv.org/abs/1801.09797&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kaiser &amp;amp; Bengio (2018)&lt;/a&gt;. The authors also train an auxilliary LSTM-based recurrent network to predict these bits autoregressively. At inference time, the latent bits will be generated by this auxiliary network in contrast to sampling from a prior. To make the predictive model more robust to unseen latent bits, we add uniform noise to approximated latent values before discretization and apply dropout &lt;a href=&#34;https://dl.acm.org/citation.cfm?id=2670313&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Srivastava et al., 2014&lt;/a&gt; on bits after discretization.&lt;/p&gt;
 &lt;h3 id=&#34;loss-function&#34;&gt;Loss function&lt;/h3&gt;
-
 &lt;p&gt;They tried both categorical softmax and $L_2$ loss and apply &lt;code&gt;clipped loss&lt;/code&gt; as $\max(Loss, C)$ for constant $C$. In categorical loss, $C$ is 10. In $L_2$ loss, $C$ is 0.03. That means, if the level of confidence about the correct pixel value exceeds 97% (as $-\ln(0.97) \approx 0.03$) we get no gradients from that pixel any longer.&lt;/p&gt;
-
 &lt;h3 id=&#34;scheduled-sampling&#34;&gt;Scheduled sampling&lt;/h3&gt;
-
 &lt;p&gt;They mitigate the problem of compounding errors in simulated environment by randomly replacing in training some frames of input $X$ by the prediction from the previous steps. Typically, we linearly increase the mixing probability during training arriving at 100% around the middle of the first iteration of the training loop.&lt;/p&gt;
-
 &lt;h2 id=&#34;policy-training&#34;&gt;Policy Training&lt;/h2&gt;
-
 &lt;p&gt;When training policy in simulated environment, the problem is still the compounding errors with long trajectories. To mitigate the problem, they choose short rollouts and uniformly sample the starting state from the ground-truth buffer. However, short rollouts may have a degrading effect as the PPO algorithm does not have a way to infer effects longer than the rollout length. To ease this problem, in the last step of a rollout we add to the reward the evaluation of the value function that is learned along the policy as baselines to compute the advantages.&lt;/p&gt;
-
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
 
 
@@ -126,42 +120,41 @@ prior $p(z)$ which in our case is the standard Gaussian $\mathcal{N}(0, I)$.&lt;
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;result_rainbow.png&#34; &gt;
-
-&lt;img src=&#34;result_rainbow.png&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Sample efficiency compared to Rainbow.&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
 
 
+
+
+
+&lt;figure  id=&#34;figure-sample-efficiency-compared-to-rainbow&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;Sample efficiency compared to Rainbow.&#34; srcset=&#34;
+               /post/model-based-reinforcement-learning-for-atari/result_rainbow_hub5ca05261be413946980b4f0b0eb66f3_128690_eb0921b946141f22737508ba120263e3.png 400w,
+               /post/model-based-reinforcement-learning-for-atari/result_rainbow_hub5ca05261be413946980b4f0b0eb66f3_128690_f3cfa2206e85ae35fd62b76dbf97356f.png 760w,
+               /post/model-based-reinforcement-learning-for-atari/result_rainbow_hub5ca05261be413946980b4f0b0eb66f3_128690_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/model-based-reinforcement-learning-for-atari/result_rainbow_hub5ca05261be413946980b4f0b0eb66f3_128690_eb0921b946141f22737508ba120263e3.png&#34;
+               width=&#34;625&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Sample efficiency compared to Rainbow.
+    &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Each bar illustrates the number of interactions with environment required by Rainbow to achieve the same score as our method (SimPLe). The red line indicates the 100K interactions threshold used by our method.
 Please refer to the paper for more results.&lt;/p&gt;
-
 &lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1903.00374&#34; target=&#34;_blank&#34;&gt;Model Based Reinforcement Learning for Atari&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1903.00374&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Model Based Reinforcement Learning for Atari&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Deep Reinforcement Learning for Portfolio Management</title>
-      <link>https://vermouth1992.github.io/post/cs599/</link>
+      <link>https://vermouth1992.github.io/post/cs599.html</link>
       <pubDate>Wed, 22 Nov 2017 12:26:16 -0800</pubDate>
-      <guid>https://vermouth1992.github.io/post/cs599/</guid>
-      <description>
-
-&lt;h2 id=&#34;problem-formulation&#34;&gt;Problem Formulation&lt;/h2&gt;
-
-&lt;p&gt;In this project, we would like to manage portfolio by distributing our investment into a number of stocks based on the market. We define our environment similar to this paper &lt;a href=&#34;https://arxiv.org/abs/1706.10059&#34; target=&#34;_blank&#34;&gt;Jiang et al&lt;/a&gt;.&lt;/p&gt;
-
+      <guid>https://vermouth1992.github.io/post/cs599.html</guid>
+      <description>&lt;h2 id=&#34;problem-formulation&#34;&gt;Problem Formulation&lt;/h2&gt;
+&lt;p&gt;In this project, we would like to manage portfolio by distributing our investment into a number of stocks based on the market. We define our environment similar to this paper &lt;a href=&#34;https://arxiv.org/abs/1706.10059&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jiang et al&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Concretely, we define $N$ to be the number of stocks we would like to invest.
 Without losing generality, at initial timestamp, we assume our total investment volume is 1 dollar. We define &lt;code&gt;close/open relative price vector&lt;/code&gt; as:
 $$
@@ -197,106 +190,88 @@ $$
 p_T=\prod_{t=1}^{T}(1-\mu_t) y_t\cdot w_{t-1}
 \end{equation}
 $$&lt;/p&gt;
-
 &lt;h3 id=&#34;key-assumptions-and-goal&#34;&gt;Key Assumptions and Goal&lt;/h3&gt;
-
 &lt;p&gt;To model real world market trades, we make several assumptions to simplify the problems:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;We can get any information about the stocks before timestamp $t$ for stock $i$. e.g. The previous stock price, the news and tweets online.&lt;/li&gt;
 &lt;li&gt;Our investment will not change how the market behaves.&lt;/li&gt;
-&lt;li&gt;The way we calculate profit in equation \ref{profit} can be interpreted as: At timestamp $t$, we buy stocks according to the &lt;code&gt;portfolio weight vector&lt;/code&gt; $w_{t-1}$ computed by history data at &lt;strong&gt;open&lt;/strong&gt; price and sell all the stocks at &lt;strong&gt;close&lt;/strong&gt; price. This may not be true in practice because you will not always be able to &lt;strong&gt;buy/sell&lt;/strong&gt; the stock at &lt;strong&gt;open/close&lt;/strong&gt; price.&lt;/li&gt;
+&lt;li&gt;The way we calculate profit in equation \ref{profit} can be interpreted as: At timestamp $t$, we buy stocks according to the &lt;code&gt;portfolio weight vector&lt;/code&gt; $w_{t-1}$ computed by history data at **open** price and sell all the stocks at **close** price. This may not be true in practice because you will not always be able to **buy/sell** the stock at **open/close** price.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;The &lt;strong&gt;goal&lt;/strong&gt; of portfolio management is to maximum $p_T$ by choosing portfolio weight vector $w$ at each timestamp $t$ based on history stock information.&lt;/p&gt;
-
 &lt;h3 id=&#34;mdp-formulation&#34;&gt;MDP formulation&lt;/h3&gt;
-
 &lt;h4 id=&#34;state-and-action&#34;&gt;State and Action&lt;/h4&gt;
-
 &lt;p&gt;We define state $s_t$ as $o_t$, where $o_t$ is the obseration of timestamp $t$. As the time goes by, the impact of history data decreases. Thus, we only consider the history price and news in a fixed window length $W$. Hence,
 $$ o_t=[\vec{v_{1,t}},\vec{v_{2,t}},\cdots,\vec{v_{N,t}}] $$
 where
 $\vec{v_{i,t}} =\begin{bmatrix}v_{i,t-W} \\ v_{i,t-W+1} \\ \vdots \\ v_{i,t-1}\end{bmatrix}$
 and $N$ is the number of stocks. The action $a_{t}$ is just &lt;code&gt;portfolio weight vector&lt;/code&gt; $w_{t}$.
 Note that this is a continuous state and action space problem.
-We try to directly solve it in continuous space instead of using discretization in previous work &lt;a href=&#34;http://cs229.stanford.edu/proj2009/LvDuZhai.pdf&#34; target=&#34;_blank&#34;&gt;Du et al&lt;/a&gt; and &lt;a href=&#34;http://cs229.stanford.edu/proj2016/report/JinElSaawy-PortfolioManagementusingReinforcementLearning-report.pdf&#34; target=&#34;_blank&#34;&gt;Jin et al&lt;/a&gt;.
+We try to directly solve it in continuous space instead of using discretization in previous work &lt;a href=&#34;http://cs229.stanford.edu/proj2009/LvDuZhai.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Du et al&lt;/a&gt; and &lt;a href=&#34;http://cs229.stanford.edu/proj2016/report/JinElSaawy-PortfolioManagementusingReinforcementLearning-report.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jin et al&lt;/a&gt;.
 Essentially, we want to train a policy network $\pi_\theta(a_t|o_t)$.&lt;/p&gt;
-
 &lt;h4 id=&#34;state-transition&#34;&gt;State Transition&lt;/h4&gt;
-
 &lt;p&gt;The underlining state evolution is determined by the market, which we don&amp;rsquo;t have any control. What we can get is the observation state, which is the price. Since we will collect history price of various stocks, $o_t$ is given by the dataset instead of $o_{t-1}$.&lt;/p&gt;
-
 &lt;h4 id=&#34;reward&#34;&gt;Reward&lt;/h4&gt;
-
 &lt;p&gt;Instead of having reward 0 at each timestamp and $p_T$ at the end, we take logarithm of equation \ref{profit_mu}:
 $$\log{p_T}=\log{\prod_{t=1}^{T}\mu_t y_t\cdot w_{t-1}}=\sum_{t=1}^{T}\log(\mu_t y_t\cdot w_{t-1})$$
 Thus, we have $\log(\mu_t y_t\cdot w_{t-1})$ reward each timestamp, which avoids the sparsity of reward problem.&lt;/p&gt;
-
 &lt;h3 id=&#34;datasets&#34;&gt;Datasets&lt;/h3&gt;
-
 &lt;p&gt;&lt;strong&gt;Stocks used:&lt;/strong&gt;
-We choose 16 target stocks from NASDAQ100 that we feel are representative of different sectors in the index fund. They include &amp;ldquo;AAPL&amp;rdquo;, &amp;ldquo;ATVI&amp;rdquo;, &amp;ldquo;CMCSA&amp;rdquo;, &amp;ldquo;COST&amp;rdquo;, &amp;ldquo;CSX&amp;rdquo;, &amp;ldquo;DISH&amp;rdquo;, &amp;ldquo;EA&amp;rdquo;, &amp;ldquo;EBAY&amp;rdquo;, &amp;ldquo;FB&amp;rdquo;, &amp;ldquo;GOOGL&amp;rdquo;, &amp;ldquo;HAS&amp;rdquo;, &amp;ldquo;ILMN&amp;rdquo;, &amp;ldquo;INTC&amp;rdquo;, &amp;ldquo;MAR&amp;rdquo;, &amp;ldquo;REGN&amp;rdquo; and &amp;ldquo;SBUX&amp;rdquo;.&lt;br /&gt;
-&lt;strong&gt;Price Data:&lt;/strong&gt;
-We collected history price of the stocks from 2012-08-13 to 2017-08-11. The price on each day contains open, high, low and close. We use 2012-08-13 to 2015-08-12 as training data and 2015-08-13 to 2017-08-11 as testing data.&lt;br /&gt;
-&lt;strong&gt;News Data:&lt;/strong&gt;
-We gather all tweets referencing the stocks from 2016-03-28 to 2016-06-15.&lt;br /&gt;
-&lt;strong&gt;Additional Testing Data:&lt;/strong&gt;
+We choose 16 target stocks from NASDAQ100 that we feel are representative of different sectors in the index fund. They include &amp;ldquo;AAPL&amp;rdquo;, &amp;ldquo;ATVI&amp;rdquo;, &amp;ldquo;CMCSA&amp;rdquo;, &amp;ldquo;COST&amp;rdquo;, &amp;ldquo;CSX&amp;rdquo;, &amp;ldquo;DISH&amp;rdquo;, &amp;ldquo;EA&amp;rdquo;, &amp;ldquo;EBAY&amp;rdquo;, &amp;ldquo;FB&amp;rdquo;, &amp;ldquo;GOOGL&amp;rdquo;, &amp;ldquo;HAS&amp;rdquo;, &amp;ldquo;ILMN&amp;rdquo;, &amp;ldquo;INTC&amp;rdquo;, &amp;ldquo;MAR&amp;rdquo;, &amp;ldquo;REGN&amp;rdquo; and &amp;ldquo;SBUX&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Price Data:&lt;/strong&gt;
+We collected history price of the stocks from 2012-08-13 to 2017-08-11. The price on each day contains open, high, low and close. We use 2012-08-13 to 2015-08-12 as training data and 2015-08-13 to 2017-08-11 as testing data.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;News Data:&lt;/strong&gt;
+We gather all tweets referencing the stocks from 2016-03-28 to 2016-06-15.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Additional Testing Data:&lt;/strong&gt;
 As another form of backtesting, we randomly select 16 stocks from NASDAQ100 the network has never seen and test whether the network can generalize well.&lt;/p&gt;
-
 &lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;
-
 &lt;p&gt;We mainly consider model-free approach in our project. First, we train a predictor given a fixed history window length $W$ of price and news.
 With the predicted price, we can train a policy network $\pi_{\theta}(a_t|s_t)$ to maximize our portofolio value at the end of the trading period.
 Note that in practice, they are trained end-to-end instead of separately.&lt;/p&gt;
-
 &lt;h3 id=&#34;data-preprocessing&#34;&gt;Data Preprocessing&lt;/h3&gt;
-
 &lt;h4 id=&#34;numerical-data&#34;&gt;Numerical Data&lt;/h4&gt;
-
 &lt;p&gt;Instead of using the raw open, high, low and close price, we normalize the history price as $(\frac{close}{open} - 1)\times scale$. There are two main advantages:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;The history price are all in the same scale regardless of their actual price.&lt;/li&gt;
 &lt;li&gt;Since the final portfolio is determined by the close/open ratio of each timestamp, it serves as a better feature compared with raw price.&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;The &lt;code&gt;scale&lt;/code&gt; factor is heuristically set to 100 in our experiments. For missing data, we pad all open, high, low, close as the close price of previous day.&lt;/p&gt;
-
 &lt;h4 id=&#34;news-data&#34;&gt;News Data&lt;/h4&gt;
-
 &lt;p&gt;The steps to proprocess the news data are:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;First, we filter each tweets by the most frequenct 2000 words.&lt;/li&gt;
 &lt;li&gt;We pad each word with end of sentence mark to make them equally long.&lt;/li&gt;
 &lt;li&gt;We use a sequence of end of sentence mark to fill the missing days.&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;h3 id=&#34;predictor-network&#34;&gt;Predictor Network&lt;/h3&gt;
-
 &lt;p&gt;
 
 
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;predictor_cnn.pdf&#34; &gt;
-
-&lt;img src=&#34;predictor_cnn.pdf&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;CNN predictor based on numerical history&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
-The rationale behind the CNN predictor is adpated from &lt;a href=&#34;https://arxiv.org/abs/1706.10059&#34; target=&#34;_blank&#34;&gt;Jiang et al&lt;/a&gt;. For each timeseries of each stock,
+
+
+
+
+&lt;figure  id=&#34;figure-cnn-predictor-based-on-numerical-history&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;CNN predictor based on numerical history&#34; srcset=&#34;
+               /post/cs599/predictor_cnn_hu50990d7d66c0f26596abf03df2368458_16792_3dea641c7abd76296f7f2f72df452047.png 400w,
+               /post/cs599/predictor_cnn_hu50990d7d66c0f26596abf03df2368458_16792_81c553f2d9fb764fb25ca4ba4a8503e6.png 760w,
+               /post/cs599/predictor_cnn_hu50990d7d66c0f26596abf03df2368458_16792_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/cs599/predictor_cnn_hu50990d7d66c0f26596abf03df2368458_16792_3dea641c7abd76296f7f2f72df452047.png&#34;
+               width=&#34;760&#34;
+               height=&#34;154&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      CNN predictor based on numerical history
+    &lt;/figcaption&gt;&lt;/figure&gt;
+The rationale behind the CNN predictor is adpated from &lt;a href=&#34;https://arxiv.org/abs/1706.10059&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jiang et al&lt;/a&gt;. For each timeseries of each stock,
 we use a $1\times3$ kernel to gather information in each window, then combine all the information to produce a single vector for each stock.
 Note that these convolutional windows doesn&amp;rsquo;t cover information across any two stocks.
 
@@ -305,21 +280,28 @@ Note that these convolutional windows doesn&amp;rsquo;t cover information across
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;predictor_lstm.pdf&#34; &gt;
-
-&lt;img src=&#34;predictor_lstm.pdf&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;LSTM predictor based on numerical history&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
+
+
+
+
+&lt;figure  id=&#34;figure-lstm-predictor-based-on-numerical-history&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;LSTM predictor based on numerical history&#34; srcset=&#34;
+               /post/cs599/predictor_lstm_hu40840770f517004e3db4e374088fbf57_11249_c5befd743eb11ea51545fb0114906afe.png 400w,
+               /post/cs599/predictor_lstm_hu40840770f517004e3db4e374088fbf57_11249_2f1e0eb8e5460a65ea1a9f1599e67035.png 760w,
+               /post/cs599/predictor_lstm_hu40840770f517004e3db4e374088fbf57_11249_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/cs599/predictor_lstm_hu40840770f517004e3db4e374088fbf57_11249_c5befd743eb11ea51545fb0114906afe.png&#34;
+               width=&#34;445&#34;
+               height=&#34;207&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      LSTM predictor based on numerical history
+    &lt;/figcaption&gt;&lt;/figure&gt;
 The LSTM predictor based on numerical history is very straight forward. Note that all the stocks share the same LSTM.
 
 
@@ -327,186 +309,207 @@ The LSTM predictor based on numerical history is very straight forward. Note tha
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;predictor_lstm_news.pdf&#34; &gt;
-
-&lt;img src=&#34;predictor_lstm_news.pdf&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;LSTM predictor based on history of news&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
+
+
+
+
+&lt;figure  id=&#34;figure-lstm-predictor-based-on-history-of-news&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;LSTM predictor based on history of news&#34; srcset=&#34;
+               /post/cs599/predictor_lstm_news_hub8f3ce9ba5d4b97fc5249b6b850b80e6_20918_e9b12bd23d12e75b68db78fb08ece0c1.png 400w,
+               /post/cs599/predictor_lstm_news_hub8f3ce9ba5d4b97fc5249b6b850b80e6_20918_65daa31973db39d9c4a606c0cafeb4bd.png 760w,
+               /post/cs599/predictor_lstm_news_hub8f3ce9ba5d4b97fc5249b6b850b80e6_20918_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/cs599/predictor_lstm_news_hub8f3ce9ba5d4b97fc5249b6b850b80e6_20918_e9b12bd23d12e75b68db78fb08ece0c1.png&#34;
+               width=&#34;486&#34;
+               height=&#34;268&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      LSTM predictor based on history of news
+    &lt;/figcaption&gt;&lt;/figure&gt;
 For news based approach, we try to predict the $\frac{close-open}{open}$ ratio. We use pretrained 50d-GloVe to initialize the embedding layer followed by a LSTM and a fully-connected layer.&lt;/p&gt;
-
 &lt;h3 id=&#34;policy-network&#34;&gt;Policy Network&lt;/h3&gt;
-
 &lt;p&gt;
 
 
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;actor.pdf&#34; &gt;
-
-&lt;img src=&#34;actor.pdf&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Policy Network&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
+
+
+
+
+&lt;figure  id=&#34;figure-policy-network&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;Policy Network&#34; srcset=&#34;
+               /post/cs599/actor_huee2be362cc5e3fc7ab83c0f34277a2f6_21962_c734c75071ccb275c863b14558899081.png 400w,
+               /post/cs599/actor_huee2be362cc5e3fc7ab83c0f34277a2f6_21962_7024b12635d13e5f8a7e01c3ccb5f86a.png 760w,
+               /post/cs599/actor_huee2be362cc5e3fc7ab83c0f34277a2f6_21962_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/cs599/actor_huee2be362cc5e3fc7ab83c0f34277a2f6_21962_c734c75071ccb275c863b14558899081.png&#34;
+               width=&#34;468&#34;
+               height=&#34;364&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Policy Network
+    &lt;/figcaption&gt;&lt;/figure&gt;
 All the policy network follows the same topology with different predictors.&lt;/p&gt;
-
 &lt;h3 id=&#34;optimal-action-and-imitation-learning&#34;&gt;Optimal Action and Imitation Learning&lt;/h3&gt;
-
 &lt;p&gt;Suppose we know the stock price of tomorrow, we greedily choose the stock with the highest close/open ratio (taking into account trading cost of changing stocks),
 buying as much as possible on the open and selling all at the close and it will yield the maximum portfolio value.&lt;/p&gt;
-
 &lt;p&gt;Given this fact, we can collect ground truth labels for each timestamp by choosing the optimal action. (e.g. $[0, 0, 1, \cdots, 0, 0]$,
 the stock with highest close/open to be 1 and all the others to be 0) Then, we can train a policy network by imitating optimal action conditioned on the current observation of history prices $o_t$.&lt;/p&gt;
-
 &lt;h3 id=&#34;deep-deterministic-policy-gradient-ddpg&#34;&gt;Deep Deterministic Policy Gradient (DDPG)&lt;/h3&gt;
-
 &lt;p&gt;
 
 
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;ddpg.png&#34; &gt;
-
-&lt;img src=&#34;ddpg.png&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Deep Deterministic Policy Gradient Algorithm &lt;a href=&#34;https://arxiv.org/abs/1509.02971&#34; target=&#34;_blank&#34;&gt;Lillicrap et al&lt;/a&gt;&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
-We try to directly learn a policy network $\pi_{\theta}(a_t|s_t)$ by continuous action space reinforcement learning algorithm &lt;a href=&#34;https://arxiv.org/abs/1509.02971&#34; target=&#34;_blank&#34;&gt;Lillicrap et al&lt;/a&gt;.
+
+
+
+
+&lt;figure  id=&#34;figure-deep-deterministic-policy-gradient-algorithm-lillicrap-et-alhttpsarxivorgabs150902971&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;Deep Deterministic Policy Gradient Algorithm [Lillicrap et al](https://arxiv.org/abs/1509.02971)&#34; srcset=&#34;
+               /post/cs599/ddpg_hub9cca65016fb8268a7ba844274dac76a_221676_123823c51b21214b0c2aa532b9ce1a22.png 400w,
+               /post/cs599/ddpg_hub9cca65016fb8268a7ba844274dac76a_221676_d6dfea1113345c0ec33a0ba0d18e2766.png 760w,
+               /post/cs599/ddpg_hub9cca65016fb8268a7ba844274dac76a_221676_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/cs599/ddpg_hub9cca65016fb8268a7ba844274dac76a_221676_123823c51b21214b0c2aa532b9ce1a22.png&#34;
+               width=&#34;760&#34;
+               height=&#34;557&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Deep Deterministic Policy Gradient Algorithm &lt;a href=&#34;https://arxiv.org/abs/1509.02971&#34;&gt;Lillicrap et al&lt;/a&gt;
+    &lt;/figcaption&gt;&lt;/figure&gt;
+We try to directly learn a policy network $\pi_{\theta}(a_t|s_t)$ by continuous action space reinforcement learning algorithm &lt;a href=&#34;https://arxiv.org/abs/1509.02971&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lillicrap et al&lt;/a&gt;.
 We show the algorithm above. The configurations are:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Actor Network: The same as policy network.&lt;/li&gt;
 &lt;li&gt;Critic Network: A linear combination of actor network structure of state (observation) and action.&lt;/li&gt;
 &lt;li&gt;Exploration noise: Ornstein-Uhlenbeck with zero mean, 0.3 sigma and 0.15 theta.&lt;/li&gt;
 &lt;li&gt;For fairness, we train models with different settings in 500 episodes. Some of the models are not fully converged at that time though.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-
 &lt;h3 id=&#34;imitation-learning&#34;&gt;Imitation Learning&lt;/h3&gt;
-
 &lt;p&gt;
 
 
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;imitation_result.png&#34; &gt;
-
-&lt;img src=&#34;imitation_result.png&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Results of trading on testing data using policy trained by imitation learning&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
+
+
+
+
+&lt;figure  id=&#34;figure-results-of-trading-on-testing-data-using-policy-trained-by-imitation-learning&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;Results of trading on testing data using policy trained by imitation learning&#34; srcset=&#34;
+               /post/cs599/imitation_result_hue0c708729cb8936c5eeef956a8c44cf7_272395_b85c41a5d97c08f66b537138d2241d57.png 400w,
+               /post/cs599/imitation_result_hue0c708729cb8936c5eeef956a8c44cf7_272395_ba30a80b442b63ec971c1bb1d64417c7.png 760w,
+               /post/cs599/imitation_result_hue0c708729cb8936c5eeef956a8c44cf7_272395_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/cs599/imitation_result_hue0c708729cb8936c5eeef956a8c44cf7_272395_b85c41a5d97c08f66b537138d2241d57.png&#34;
+               width=&#34;760&#34;
+               height=&#34;534&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Results of trading on testing data using policy trained by imitation learning
+    &lt;/figcaption&gt;&lt;/figure&gt;
 The market value is obtained by equally distributing your investment to all the stocks. It turns out that smaller windows work better.
 Larger window means larger models and it tends to overfit very quickly since the training data is just around 1000.&lt;/p&gt;
-
 &lt;h3 id=&#34;ddpg&#34;&gt;DDPG&lt;/h3&gt;
-
 &lt;p&gt;
 
 
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;ddpg_result.png&#34; &gt;
-
-&lt;img src=&#34;ddpg_result.png&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Results of trading on testing data using policy trained by DDPG&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
+
+
+
+
+&lt;figure  id=&#34;figure-results-of-trading-on-testing-data-using-policy-trained-by-ddpg&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;Results of trading on testing data using policy trained by DDPG&#34; srcset=&#34;
+               /post/cs599/ddpg_result_hub57cb86b64ae2097150ed59b995d7935_256623_c02ba1fad2b635711851ad1bdffc898c.png 400w,
+               /post/cs599/ddpg_result_hub57cb86b64ae2097150ed59b995d7935_256623_aed40aad6d227011b426bc4f3ec41a05.png 760w,
+               /post/cs599/ddpg_result_hub57cb86b64ae2097150ed59b995d7935_256623_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/cs599/ddpg_result_hub57cb86b64ae2097150ed59b995d7935_256623_c02ba1fad2b635711851ad1bdffc898c.png&#34;
+               width=&#34;760&#34;
+               height=&#34;536&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Results of trading on testing data using policy trained by DDPG
+    &lt;/figcaption&gt;&lt;/figure&gt;
 We find that LSTM predictor based models have better performance than the CNN predictor based models.
 It is not surprising that smaller windows perform best because of the temporaral relationship among price in a short window.&lt;/p&gt;
-
 &lt;h3 id=&#34;imitation-learning-vs-ddpg&#34;&gt;Imitation Learning vs DDPG&lt;/h3&gt;
-
 &lt;p&gt;Generally, models trained by DDPG is better than models trained by imitation learning.
 The difficulty of training good policy networks by imitation learning lies in the extreme tendency to overfit while DDPG doesn&amp;rsquo;t suffer from this problem
 because each episode during training is sampled from the whole training period with different starting date and lengths.&lt;/p&gt;
-
 &lt;h3 id=&#34;testing-on-unseen-stocks&#34;&gt;Testing on Unseen Stocks&lt;/h3&gt;
-
 &lt;p&gt;
 
 
 
 
 
-&lt;figure&gt;
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;unknow_stocks_performance.png&#34; &gt;
-
-&lt;img src=&#34;unknow_stocks_performance.png&#34; &gt;
-&lt;/a&gt;
 
 
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Results of trading on 16 unseen stocks using best two policies trained by imitation learning and DDPG&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
 
-&lt;/figure&gt;
 
+
+
+
+
+&lt;figure  id=&#34;figure-results-of-trading-on-16-unseen-stocks-using-best-two-policies-trained-by-imitation-learning-and-ddpg&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;
+        &lt;img alt=&#34;Results of trading on 16 unseen stocks using best two policies trained by imitation learning and DDPG&#34; srcset=&#34;
+               /post/cs599/unknow_stocks_performance_hu61b9db16ae8e3d5d87c81bfb14fc8188_163073_78d6c40a64b914c0dec95d70fcc5bb1b.png 400w,
+               /post/cs599/unknow_stocks_performance_hu61b9db16ae8e3d5d87c81bfb14fc8188_163073_e6da33e9a0466f93f7c872f39b9ec975.png 760w,
+               /post/cs599/unknow_stocks_performance_hu61b9db16ae8e3d5d87c81bfb14fc8188_163073_1200x1200_fit_lanczos_2.png 1200w&#34;
+               src=&#34;https://vermouth1992.github.io/post/cs599/unknow_stocks_performance_hu61b9db16ae8e3d5d87c81bfb14fc8188_163073_78d6c40a64b914c0dec95d70fcc5bb1b.png&#34;
+               width=&#34;760&#34;
+               height=&#34;534&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Results of trading on 16 unseen stocks using best two policies trained by imitation learning and DDPG
+    &lt;/figcaption&gt;&lt;/figure&gt;
 To see how the network generalizes, we choose another 16 unseen stocks including
 &amp;lsquo;FOX&amp;rsquo;, &amp;lsquo;FISV&amp;rsquo;, &amp;lsquo;EXPE&amp;rsquo;, &amp;lsquo;FAST&amp;rsquo;, &amp;lsquo;ESRX&amp;rsquo;, &amp;lsquo;DLTR&amp;rsquo;, &amp;lsquo;CTSH&amp;rsquo;, &amp;lsquo;CSCO&amp;rsquo;, &amp;lsquo;QCOM&amp;rsquo;, &amp;lsquo;PCLN&amp;rsquo;, &amp;lsquo;CELG&amp;rsquo;, &amp;lsquo;AMGN&amp;rsquo;, &amp;lsquo;WFM&amp;rsquo;,
 &amp;lsquo;WDC&amp;rsquo;, &amp;lsquo;NVDA&amp;rsquo; and &amp;lsquo;STX&amp;rsquo;. The result shows that these models generalizes pretty well and CNN-based predictor outperforms
 LSTM-based predictor in both cases.&lt;/p&gt;
-
 &lt;h3 id=&#34;related-work&#34;&gt;Related Work&lt;/h3&gt;
-
-&lt;p&gt;In &lt;a href=&#34;http://cs229.stanford.edu/proj2009/LvDuZhai.pdf&#34; target=&#34;_blank&#34;&gt;Du et al&lt;/a&gt; and &lt;a href=&#34;http://cs229.stanford.edu/proj2016/report/JinElSaawy-PortfolioManagementusingReinforcementLearning-report.pdf&#34; target=&#34;_blank&#34;&gt;Jin et al&lt;/a&gt;,
+&lt;p&gt;In &lt;a href=&#34;http://cs229.stanford.edu/proj2009/LvDuZhai.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Du et al&lt;/a&gt; and &lt;a href=&#34;http://cs229.stanford.edu/proj2016/report/JinElSaawy-PortfolioManagementusingReinforcementLearning-report.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jin et al&lt;/a&gt;,
 the author proposes to use DQN to trade in 2 stocks market with discreted state and action space.
-Their settings are far simpler than ours. In &lt;a href=&#34;https://arxiv.org/abs/1706.10059&#34; target=&#34;_blank&#34;&gt;Jiang et al&lt;/a&gt;, the author proposes to use Deterministic Policy Gradient (DPG) to trade in bitcoin market.
+Their settings are far simpler than ours. In &lt;a href=&#34;https://arxiv.org/abs/1706.10059&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jiang et al&lt;/a&gt;, the author proposes to use Deterministic Policy Gradient (DPG) to trade in bitcoin market.
 It&amp;rsquo;s very hard to compare with them because of different dataset. But DDPG is strictly better than DPG in terms of performance and convergence time.&lt;/p&gt;
-
 &lt;h3 id=&#34;future-work&#34;&gt;Future Work&lt;/h3&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Combine news based predictor with numerical base predictor and train on a larger dataset with finer timestamp end-to-end with policy network.&lt;/li&gt;
 &lt;li&gt;Model ensemble: combine the result of models trained by DDPG and imitation learning.&lt;/li&gt;
@@ -514,10 +517,8 @@ It&amp;rsquo;s very hard to compare with them because of different dataset. But 
 &lt;li&gt;Instead of optimizing portfolio value, we consider risk aware portfolio by optimizing the sharpe ratio define as $\frac{\text{Mean}(r_t)}{\text{Variance}(r_t)}$, where $r_t$ is the rate of return in the period.
 It turns out to be a very difficult problem since it is not a standard MDP anymore.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h3 id=&#34;pretrained-network&#34;&gt;Pretrained Network&lt;/h3&gt;
-
-&lt;p&gt;Our &lt;a href=&#34;https://github.com/vermouth1992/drl-portfolio-management&#34; target=&#34;_blank&#34;&gt;code&lt;/a&gt; containing pretrained network is open source on Github.&lt;/p&gt;
+&lt;p&gt;Our &lt;a href=&#34;https://github.com/vermouth1992/drl-portfolio-management&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code&lt;/a&gt; containing pretrained network is open source on Github.&lt;/p&gt;
 </description>
     </item>
     
